@@ -1,0 +1,20 @@
+<?php
+		$baris=($_GET['p']-1) *40; /* untuk menetukan tampulan pada halaman selanjutnya*/
+		$anggota = $cit->tampil("*","tabelpangkalan",1,'pemilikPangkalan',$baris); /*baris hanya sebuah variabel untuk memberikan nama*/
+		for($i = 0 ; $i < COUNT($anggota) ; $i++ ){
+			echo
+			"
+			<tr>
+				<td>".$anggota[$i]['idPangkalan']."</td>
+				<td>".$anggota[$i]['pemilikPangkalan']."</td>
+				<td>".$anggota[$i]['desa']."</td>
+				<td>".$anggota[$i]['kecamatan']."</td>
+				<td>".$anggota[$i]['niap']."</td>
+				<td>
+					<a href='formulirPangkalan.php?modus=update&id=".$anggota[$i]['idPangkalan']."'>Edit</a>
+					Hapus
+				</td>
+			</tr>
+			";
+		}
+?>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TAMBAH DATA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/formTambah.js"></script>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <H2><center> FORM TAMBAH DATA</center></H2><br><br>
+
+	  <div class="row">
+	    <div class="col-sm-12">
+        <div>
+          <div class="form-group">
+            <label>ID Pangkalan</label>
+            <input class="form-control" id="e_id" placeholder="ID Pangkalan akan disi otomatis oleh sistem" readonly />
+          </div>
+
+          <div class="form-group">
+            <label>Nama Pemilik / Nama Pangkalan</label>
+            <input class="form-control" id="e_nama" placeholder="Nama Pangkalan" onkeypress=pindahke(this.id,event,'e_tgl')
+            required />
+          </div>
+
+         
+
+          <div class="form-group">
+            <label>Nama Agen</label>
+              <select class="form-control" id="e_lks" onkeypress=pindahke(this.id,event,'e_desk')/>
+                <option value="#">--- Silahkan pilih Agen ---</option>
+                <option value="a306">PT. Serayu Mitra Selaras</option>
+                <option value="a307">PT. Mudah Hasil</option>
+                <option value="a308">PT. Viroma Guyub Abadi</option>
+                <option value="a309">PT. Budi Seger Jaya</option>
+                <option value="a310">PT. Satria Gas Abadi</option>
+                <option value="a311">PT. Ranasa Abadi Makmur</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label>Kecamatan</label>
+            <select class="form-control" id="e_desk" onkeypress=pindahke(this.id,event,'e_htm')  />
+            <option value="#">--- Silahkan pilih Kecamatan ---</option>
+                <option value="330401">Susukan</option>
+                <option value="330402">Purwareja Klampok</option>
+                <option value="330403">Mandiraja</option>
+                <option value="330404">Purwonegoro</option>
+                <option value="330405">Bawang</option>
+                <option value="330406">Banjarnegara</option>
+                <option value="330407">Sigaluh</option>
+                <option value="330408">Madukara</option>
+                <option value="330409">Banjarmangu</option>
+                <option value="330410">Wanadadi</option>
+                <option value="330411">Rakit</option>
+                <option value="330412">Punggelan</option>
+                <option value="330413">Karangkobar</option>
+                <option value="330414">Pagentan</option>
+                <option value="330415">Pejawaran</option>
+                <option value="330416">Batur</option>
+                <option value="330417">Wanayasa</option>
+                <option value="330418">Kalibening</option>
+                <option value="330419">Pandanarum</option>
+                <option value="330420">Pagedongan</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label>Desa</label>
+            <input class="form-control" id="e_htm" onkeypress=pindahke(this.id,event,'simpanEvent')  />
+          </div>
+          <br>
+          <p> )*Pastikan semua data sudah terisi dengan benar <p>
+          <div class="form-group">
+            <a class="btn btn-primary" style="background-color:#228B22" id="simpanEvent">Simpan</a>
+          </div>
+
+        </div>
+	    </div>
+	  </div>
+  </div>
+  <div class="row">
+	<div class="col-sm-12">
+		<div id="listEvent"></div>
+	</div>
+  </div>
+</body>
+</html>
