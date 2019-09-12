@@ -1,4 +1,5 @@
  <?php
+ /*
  <form class="form-inline" action="/action_page.php">
   <label for="email" class="mr-sm-2">Email address:</label>
   <input type="email" class="form-control mb-2 mr-sm-2" id="email">
@@ -11,4 +12,5 @@
   </div>
   <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form> 
+*/
 ?>

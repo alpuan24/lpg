@@ -1,5 +1,10 @@
-background: #3498db;
-  font-family: sans-serif;
+html,body{
+  background: 
+    linear-gradient(#ffffff70 , #ffffffd2) ,
+    url("../img/lpg-bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
  
 h2 {
@@ -7,11 +12,20 @@ h2 {
 }
  
 .login {
+  position: absolute; left: 50% ; top: 50%;
+  width: 320px; height: 380px; border: 1px solid #49c7f8;
+  margin-left: -160px ; margin-top: -190px;
   padding: 1em;
-  margin: 2em auto;
-  width: 17em;
-  background: #fff;
+  background: #defadd;
   border-radius: 3px;
+}
+
+.login > #loginimg { width: 70px; height: 90px; margin: auto;}
+.login > #loginimg > img { width: 100%; height: 100%; }
+
+form > div {
+  background-color: #c3d66f; color: #374400;
+  padding: 5px 20px;
 }
  
 label {

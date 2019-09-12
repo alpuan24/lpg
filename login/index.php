@@ -7,18 +7,21 @@
 <body>
 	<br/>
 	<br/>
-	<center><h2>Ketikan Username dan Password untuk Masuk !</h2></center>	
+	<!--center><h2>Ketikan Username dan Password untuk Masuk !</h2></center-->	
 	<br/>
 	<div class="login">
-	<br/>
+	<div id="loginimg">
+		<img src="../img/lpg3kg.png" alt="lpgdroid">
+	</div>
+		<h4 style='text-align:center;'>Login Simpel LPG - 3Kg</h4>
 		<form action="login.php" method="post" onSubmit="return validasi()">
 			<div>
 				<label>Username:</label>
-				<input type="text" name="username" id="username" />
+				<input type="text" name="username" id="username" value="admpemda"/>
 			</div>
 			<div>
 				<label>Password:</label>
-				<input type="password" name="password" id="password" />
+				<input type="password" name="password" id="password" value="admpemda3304banjar" />
 			</div>			
 			<div>
 				<input type="submit" value="Login" class="tombol">

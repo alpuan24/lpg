@@ -20,12 +20,12 @@ if($_POST['modus'] == 'simpan'){
 	$data = "'$nomor','$nama'";
 
 	$ci->simpan($tabel,$kolom,$data);
-}
-elseif($_POST['modus'] == 'update'){
+}elseif($_POST['modus'] == 'update'){
 	echo "Update Data Anggota";
 }
 
 //arahkan kembali ke file rformulir
-echo "<a href='../formulir/formulirAnggota.php?modus='.$_POST['modus']."'>
+echo "<a href='../formulir/formulirAnggota.php?modus='".$_POST['modus']."'>
 <hr/>Kembali...</a>";
+
 ?>

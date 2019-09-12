@@ -6,7 +6,7 @@
     // set properti host, user, password dan nama database
     public $db_host = "localhost";      // sesuaikan dengan konfigurasi
     public $db_user = "root";     // sesuaikan dengan konfigurasi
-    public $db_pass = "";   // sesuaikan dengan konfigurasi
+    public $db_pass = "ma21jr";   // sesuaikan dengan konfigurasi
     public $db_name = "lpg";      // sesuaikan dengan konfigurasi
 
     // method untuk koneksi
