@@ -10,25 +10,18 @@ $password = md5($_POST['username']."***".$_POST['password']);
 // tampil($kolom,$tabel,$kondisi,$urut,$baris)
 $user = $login->tampil("*" ,"tabeluser" ,"password = '".$password."'" , "id" ,0);
 
-
  
 if(count($user) > 0){
-	/*
-	[id] => 1
-	[nama] => Admin Pemda
-	[email] => lpg_bna@gmail.com
-	[user] => admpemda
-	[password] => 4ccdf7f5a80d7eeba69a88008548a99e
-	[no_hp] => 82324423442
-	[kelas] => 1
-	*/
 
-	$_SESSION['user_id'] = $user['id'];
-	$_SESSION['username'] = $user['nama'];
-	$_SESSION['kelas'] = $user['kelas'];
-	if( $user['kelas'] == 1 ){
-		header("Location: ../admin/");
+	$_SESSION['user_id'] = $user[0]['id'];
+	$_SESSION['username'] = $user[0]['nama'];
+	$_SESSION['kelas'] = $user[0]['kelas'];
+
+	if( $user[0]['kelas'] == 1 ){
+		//echo "Kelas 1";
+		header("Location: ../");
 	}else{
+		echo "Bukan Kelas 1";
 		header("Location: ../distributor/");
 	}
 }else{
