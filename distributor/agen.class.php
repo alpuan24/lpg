@@ -42,4 +42,23 @@ class agen extends db
         return $data;
         $conn->close(); $qry->close();
     }
+
+    function cariPangkalan($niap,$nama){
+        $conn = $this->koneksi();
+        $nama = "%".$nama."%";
+        $sql = "SELECT idPangkalan , pemilikPangkalan FROM tabelpangkalan WHERE niap = ? && pemilikPangkalan  LIKE ?";
+        $qry = $conn->prepare($sql);
+        $qry->bind_param("ss" ,$niap,$nama);
+
+        $qry->execute();
+        $qry->bind_result($idp,$nmp);
+        $data = [];
+        while($qry->fetch()){
+            $res = ['idPang' => $idp , 'nmPang' => $nmp];
+            array_push($data , $res);
+        }
+        return $data;
+        
+        $conn->close(); $qry->close();
+    }
 }

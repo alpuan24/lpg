@@ -1,10 +1,12 @@
 <?php 	
-    session_start();
+	session_start();
+	if(!isset($_SESSION) || $_SESSION['kelas'] != 2 ){
+		header("location: ../login/logout.php");
+		exit();
+	}
     require('agen.class.php');
     require('agen.config.php');
     $agen = new agen();
-    
-    $_SESSION['niap'] = 'a306';
 ?>
 
 <!DOCTYPE html>

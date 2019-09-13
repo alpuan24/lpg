@@ -9,6 +9,11 @@
             
 
             <li class="active">
+              <a class="nav-link" style="background-color:#555" href="#">
+                <?=$_SESSION['username'];?></a>
+            </li>
+
+            <li class="active">
               <a class="nav-link" style="background-color:#555" href="./?menu=profil">
                 <i style='font-size:24px' class='fab'>&#xf170;</i> PROFIL</a>
             </li>

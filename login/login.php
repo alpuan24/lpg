@@ -19,9 +19,10 @@ if(count($user) > 0){
 
 	if( $user[0]['kelas'] == 1 ){
 		//echo "Kelas 1";
-		header("Location: ../");
+		header("Location: ../?menu=agen");
 	}else{
-		echo "Bukan Kelas 1";
+		//echo "Bukan Kelas 1";
+		$_SESSION['niap'] = $user[0]['niap'];
 		header("Location: ../distributor/");
 	}
 }else{

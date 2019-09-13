@@ -1,4 +1,9 @@
-<?php 	
+<?php
+	session_start();
+	if(!isset($_SESSION['username']) || $_SESSION['kelas'] !=1){
+		header("Location:./login/logout.php");
+		exit();
+	}
 	require('./kelas/class.db.php');
 	$cit = new db();
 ?>

@@ -4,4 +4,5 @@ if(!$_GET['menu']){
 }else{
     if($_GET['menu'] == 'profil') { include "profil.php";}
     if($_GET['menu'] == 'pangkalan') { include "pangkalan.php";}
+    if($_GET['menu'] == 'distribusi') { include "distribusi.php";}
 }

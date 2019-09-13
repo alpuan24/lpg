@@ -17,11 +17,11 @@
 		<form action="login.php" method="post" onSubmit="return validasi()">
 			<div>
 				<label>Username:</label>
-				<input type="text" name="username" id="username" value="admpemda"/>
+				<input type="text" name="username" id="username" value=""/>
 			</div>
 			<div>
 				<label>Password:</label>
-				<input type="password" name="password" id="password" value="admpemda3304banjar" />
+				<input type="password" name="password" id="password" value="" />
 			</div>			
 			<div>
 				<input type="submit" value="Login" class="tombol">

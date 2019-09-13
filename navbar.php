@@ -34,7 +34,7 @@
             </li>-->
 
             <li class="active">
-              <a class="nav-link" style="background-color:#555" href="../login/logout.php">
+              <a class="nav-link" style="background-color:#555" href="./login/logout.php">
                 <i style='font-size:24px' class='fas'>&#xf09c;</i> LOGOUT</a>            
             <li>
                   
