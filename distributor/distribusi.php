@@ -27,11 +27,33 @@
         </form>
     </div>
     <div class="row">
+        <div class="col-sm-12">
+            <h4>Pencarian Laporan</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">Tanggal Distribusi : </div>
         <div class="col-sm-3">
-        <h4>Pencarian Laporan</h4>
-        <span>
-            Tanggal Distribusi : <input type="date" id="tgDistribusi" class="form-control">
-        </span>
+            <input type="date" id="tgDistribusi" class="form-control">
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-success" id="crDistrib">Cari!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Pangkalan </th>
+                        <th>Desa</th>
+                        <th>Kecamatan</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody id="dataDistrib"></tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -50,6 +72,25 @@ $(document).ready( function(){
                 })
             })
         }
+    })
+
+    $("#crDistrib").click( function(){
+        let tgl = $("#tgDistribusi").val();
+        let nia = "<?=$_SESSION['niap'];?>";
+        $.getJSON('cariDistrib.php?tgl='+tgl+'&niap='+nia , function(distrib){
+            $("#dataDistrib tr").remove();
+            $.each( distrib , function(i,data){
+                $("#dataDistrib").append(`
+                <tr>
+                <td>${data.tanggal}</td>
+                <td>${data.pangkalan}</td>
+                <td>${data.desa}</td>
+                <td>${data.kecamatan}</td>
+                <td align='right'>${data.jumlah} Tabung</td>
+                </tr>
+                `);
+            })
+        })
     })
 })
 </script>

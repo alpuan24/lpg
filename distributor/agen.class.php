@@ -123,4 +123,30 @@ class agen extends db
         
         $conn->close(); $qry->close();
     }
+
+    function dataDistrib($niap,$tgl){
+        $conn = $this->koneksi();
+        $sql = "SELECT DATE_FORMAT(tanggal,'%d/%m/%Y') tanggal , tabelpangkalan.pemilikPangkalan, tabeldesa.desa, tabelpangkalan.kecamatan, jumlah FROM tabeldistribusi , tabelpangkalan , tabeldesa WHERE tabeldistribusi.niap= ? && tanggal = ? && tabelpangkalan.idPangkalan = tabeldistribusi.idPangkalan && tabeldesa.nid = tabelpangkalan.desa ORDER BY kecamatan,desa,pemilikPangkalan";
+        $qry = $conn->prepare($sql);
+        $qry->bind_param("ss" ,$niap,$tgl);
+
+        $qry->execute();
+        $qry->bind_result($tgl,$pang,$desa,$kcmt,$jmlh);
+        $data = [];
+        while($qry->fetch()){
+            $res = [
+                'tanggal' => $tgl,
+                'pangkalan' => $pang,
+                'desa' => $desa,
+                'kecamatan' =>$kcmt,
+                'jumlah' => $jmlh
+            ];
+            array_push($data , $res);
+        }
+        return $data;
+        
+        $conn->close(); $qry->close();
+
+    }
+
 }
