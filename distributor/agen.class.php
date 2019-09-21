@@ -61,4 +61,66 @@ class agen extends db
         
         $conn->close(); $qry->close();
     }
+
+    function setDistribusi($data){
+       
+
+        $conn = $this->koneksi();
+        $sql = "INSERT INTO tabeldistribusi SET idDistribusi = ?, tanggal  = ? , niap  = ? , idPangkalan  = ?, jumlah  = ?";
+        $qry = $conn->prepare($sql);
+        
+        $qry->bind_param("ssssi" ,$data['distId'],$data['tanggal'],$data['niap'],$data['pangkalan'],$data['jumlahtabung']);
+        
+        $qry->execute();
+        
+        return $qry->affected_rows;
+
+        $conn->close(); $qry->close();
+        
+    }
+
+    function getDistid(){
+        $now = date('ymd')."%";
+        $conn = $this->koneksi();
+        
+        $sql = "SELECT MAX(idDistribusi) distId FROM tabeldistribusi WHERE idDistribusi LIKE ?";
+        $qry = $conn->prepare($sql);
+        $qry->bind_param("s",$now);
+        $qry->execute();
+        $qry->bind_result($distId);
+        $data = '';
+        while($qry->fetch()){
+            $data = $distId;
+        }
+
+        return $data;
+        $conn->close(); $qry->close();
+    }
+
+    function getDistribusi($niap,$bulan){
+        $conn = $this->koneksi();
+
+        $sql = "SELECT tabeldistribusi.idDistribusi , DATE_FORMAT(tabeldistribusi.tanggal ,'%d/%m/%Y') as tanggal , tabelpangkalan.pemilikPangkalan as pangkalan , tabeldesa.desa , tabelpangkalan.kecamatan , tabeldistribusi.jumlah FROM tabeldistribusi , tabelpangkalan , tabeldesa WHERE tabelpangkalan.idPangkalan = tabeldistribusi.idPangkalan && tabeldesa.nid = tabelpangkalan.desa && tabeldistribusi.niap = ? && LEFT(tabeldistribusi.tanggal , 7) = ?";
+
+        $qry = $conn->prepare($sql);
+        $qry->bind_param("ss" ,$niap,$bulan);
+
+        $qry->execute();
+        $qry->bind_result($distId,$tanggal,$pangkalan,$desa,$kecamatan,$jumlah);
+        $data = [];
+        while($qry->fetch()){
+            $res = [
+                'idDistribusi' => $distId,
+                'tanggal' => $tanggal,
+                'pangkalan' => $pangkalan,
+                'desa' => $desa,
+                'kecamatan' => $kecamatan,
+                'jumlah' => $jumlah
+            ];
+            array_push($data , $res);
+        }
+        return $data;
+        
+        $conn->close(); $qry->close();
+    }
 }

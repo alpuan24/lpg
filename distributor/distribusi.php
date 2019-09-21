@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row" style="margin-top:25px;">
         <form action="aksi-distribusi.php" method="post" class="form-inline">
+        <input type="hidden" name="niap" value="<?=$_SESSION['niap'];?>">
         <!-- tanggal,idPangkalan,jumlah -->
         <div class="form-group">
             <label for="tanggal">Tanggal: </label>
