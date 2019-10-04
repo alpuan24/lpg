@@ -1,0 +1,2 @@
+view
+CREATE OR REPLACE VIEW vwDisribusi AS SELECT tabeldistribusi.* , tabelagen.namaAgen , tabelpangkalan.pemilikPangkalan , tabelpangkalan.desa iddesa , tabeldesa.desa namadesa, tabelpangkalan.kecamatan FROM tabeldistribusi , tabelagen , tabeldesa , tabelpangkalan WHERE tabelpangkalan.niap = tabelagen.niap  && tabelpangkalan.idPangkalan = tabeldistribusi.idPangkalan && tabeldesa.nid = tabelpangkalan.desa

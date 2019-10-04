@@ -29,7 +29,7 @@
 				<th>Nama</th>
 				<th>Email</th>
 				<th>User</th>
-				<th>Password</th>
+				<!--th>Password</th-->
 				<th>Nomor HP</th>
 				<th>Kelas</th>
 				<th>NIAP</th>
@@ -47,7 +47,7 @@
 				<td>".$anggota[$i]['nama']."</td>
 				<td>".$anggota[$i]['email']."</td>
 				<td>".$anggota[$i]['user']."</td>
-				<td>".$anggota[$i]['password']."</td>
+				<!--td>".$anggota[$i]['password']."</td-->
 				<td>".$anggota[$i]['no_hp']."</td>
 				<td>".$anggota[$i]['kelas']."</td>
 				<td>".$anggota[$i]['niap']."</td>

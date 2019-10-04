@@ -23,6 +23,16 @@
                 <i style='font-size:24px' class='far'>&#xf044;</i> LAPORAN</a>
             </li>
 
+            <li class="active">
+              <a class="nav-link" style="background-color:#555" href="./?menu=rekapitulasi">
+                <i style='font-size:24px' class='far'>&#xf044;</i> REKAPITULASI</a>
+            </li>
+
+            <li class="active">
+              <a class="nav-link" style="background-color:#555" href="./?menu=user">
+                <i style='font-size:24px' class='fas'>&#xf508;</i> USER</a>
+            </li>
+
             <!--<li class="active">
               <a class="nav-link" style="background-color:#555" href="./?menu=user">
                 <i style='font-size:24px' class='fas'>&#xf51c;</i> PENGGUNA</a>

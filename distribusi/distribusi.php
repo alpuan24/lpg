@@ -1,20 +1,49 @@
-<hr><center><h3>Tabel Laporan Distribusi LPG Tabung 3 Kg</h3></center><hr>
-
-
-Silahkan Pilih Agen :
-		<div class="form-group">
-			<select id="agen" class="form-control">
-				<option>Pilih Agen</option>
-				<option>PT Serayu Mitra Selaras</option>
-				<option>PT Mudah Hasil</option>
-				<option>PT Viroma Guyub Abadi</option>
-				<option>PT Budi Seger Jaya</option>
-				<option>PT Satria Gas Abadi</option>
-				<option>PT Ranasa Abadi Makmur</option>
-			</select>	
+<div class="container-fluid" style="min-height:500px;">
+	<div class="row">
+		<div class="col-lg-12">
+		<center><h3>Tabel Laporan Distribusi LPG Tabung 3 Kg</h3></center>		
 		</div>
-
-Silahkan Pilih Kecamatan :
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			Silahkan Pilih Agen :
+			<div class="form-group">
+				<select id="agen" class="form-control">
+					<option>Pilih Agen</option>
+					<?php
+						// tampil($kolom,$tabel,$kondisi,$urut,$baris)
+						$agen = $cit->tampil("niap , namaAgen " , "tabelagen" , "1" , "namaAgen" , 0);
+						foreach($agen as $agn){
+							echo "<option value='{$agn['niap']}'>{$agn['namaAgen']}</option>";
+						}
+					?>
+				</select>	
+			</div>		
+		</div>
+		<div class="col-md-6">
+			Laporan Bulan :
+			<div class="form-group">
+				<select id="bulan" class="form-control">
+					<option>Pilih Bulan</option>
+					<option value="<?=date('Y');?>-01">Januari</option>
+					<option value="<?=date('Y');?>-02">Februari</option>
+					<option value="<?=date('Y');?>-03">Maret</option>
+					<option value="<?=date('Y');?>-04">April</option>
+					<option value="<?=date('Y');?>-05">Mei</option>
+					<option value="<?=date('Y');?>-06">Juni</option>
+					<option value="<?=date('Y');?>-07">Juli</option>
+					<option value="<?=date('Y');?>-08">Agustus</option>
+					<option value="<?=date('Y');?>-09">September</option>
+					<option value="<?=date('Y');?>-10">Oktober</option>
+					<option value="<?=date('Y');?>-11">November</option>
+					<option value="<?=date('Y');?>-12">Desember</option>
+				</select>	
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+		Silahkan Pilih Kecamatan :
 		<div class="form-group">
 			<select id="kecamatan" class="form-control">
 				<option>Pilih Kecamatan</option>
@@ -40,73 +69,57 @@ Silahkan Pilih Kecamatan :
 				<option>Pagedongan</option>
 			</select>
 		</div>
-
-		Silahkan Pilih Desa :
-		<div class="form-group">
-			<select id="desa" class="form-control">
-			</select>
 		</div>
-
-	Laporan Bulan :
-		<div class="form-group">
-			<select id="bulan" class="form-control">
-				<option>Pilih Bulan</option>
-				<option>Januari</option>
-				<option>Februari</option>
-				<option>Maret</option>
-				<option>April</option>
-				<option>Mei</option>
-				<option>Juni</option>
-				<option>Juli</option>
-				<option>Agustus</option>
-				<option>September</option>
-				<option>Oktober</option>
-				<option>November</option>
-				<option>Desember</option>
-			</select>	
+		<div class="col-md-6">
+			Silahkan Pilih Desa :
+			<div class="form-group">
+				<select id="desa" class="form-control">
+				</select>
+			</div>
 		</div>
+	</div>
 
-<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>NIP</th>
-				<th>Pangkalan</th>
-				<th>Agen</th>
-				<th>Desa</th>
-				<th>Kecamatan</th>
-				<th>Realisasi</th>
-				<th>Kontrol</th>
-			</tr>
-		</thead>
-<!--
-<div>
-	<?php include("./pangkalan/datapangkalan.php");?> <!-- perintah disamping untuk memanggil data dari datapangkalan.php bro -->
-<!--	<?php nomorHalaman(); ?>
+	<div class="row">
+		<div class="col-lg-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>NIP</th>
+						<th>Pangkalan</th>
+						<th>Agen</th>
+						<th>Desa</th>
+						<th>Kecamatan</th>
+						<th>Realisasi</th>
+					</tr>
+				</thead>
+				<tbody id="distAgen"></tbody>
+			</table>		
+		</div>
+	</div>
 </div>
 
-<!--
-
-		<tbody id="filterdesa">
-			<?php
-				$baris=($_GET['p']-1) *40; /* untuk menetukan tampulan pada halaman selanjutnya*/
-				$anggota = $cit->tampil("*","tabelpangkalan",1,'pemilikPangkalan',$baris); /*baris hanya sebuah variabel untuk memberikan nama*/
-				for($i = 0 ; $i < COUNT($anggota) ; $i++ ){
-					echo
-					"
+<script>
+	$(document).ready(function(){
+		$("#desa").change( function(){
+			let nia = $("#agen").val();
+			let bl = $("#bulan").val();
+			let ds = $("#desa").val();
+			let agn = $("#agen option:selected").text();
+			$("#distAgen tr").remove();
+			$.getJSON(`distribusi/qDistAgen.php?nia=${nia}&bl=${bl}&ds=${ds}` , function(dadis){
+				$.each(dadis , function(i,data){
+					$("#distAgen").append(`
 					<tr>
-						<td>".$anggota[$i]['idPangkalan']."</td>
-						<td>".$anggota[$i]['pemilikPangkalan']."</td>
-						<td>".$anggota[$i]['desa']."</td>
-						<td>".$anggota[$i]['kecamatan']."</td>
-						<td>".$anggota[$i]['niap']."</td>
-						<td>
-							<a href='./?menu=formulirPangkalan&modus=update&id=".$anggota[$i]['idPangkalan']."'>Edit</a>
-							 Hapus
-						</td>
+					<td>${nia}</td>
+					<td>${data.pkl}</td>
+					<td>${data.agn}</td>
+					<td>${data.dsa}</td>
+					<td>${data.kec}</td>
+					<td align='right'>${data.jml}</td>
 					</tr>
-					";
-				}
-			?>
-		</tbody>
--->
-</table>
+					`);
+				})
+			})
+		})
+	});
+</script>

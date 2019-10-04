@@ -17,18 +17,11 @@
 
 				//navbar distribusi
 			case 'distribusi' : include("distribusi/distribusi.php"); break;
+			case 'rekapitulasi' : include("distribusi/rekapDistribusi.php"); break;
 
 				//Navbar pengguna
 			case 'user' : include("user/user.php"); break;
 			case 'tbuser' : include("user/formulirUser.php"); break;
 			case 'formulirUser' : include("user/formulirUser.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
-			case 'halaman8' : include("halaman8.php"); break;
 		}
 ?>
