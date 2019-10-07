@@ -8,7 +8,7 @@
 				//navbar Agen
 			case 'agen' : include("agen/agen.php"); break;
 			case 'tbagen' : include("agen/formulirAgen.php"); break;
-			case 'formulirAgen' : include("agen/FormulirAgen.php"); break;
+			case 'formulirAgen' : include("agen/formulirAgen.php"); break;
 
 				// navbar pangkalan
 			case 'pangkalan' : include("pangkalan/pangkalan.php"); break;

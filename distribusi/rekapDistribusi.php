@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <button class="btn btn-success" id="submitrekap">Buka Data!</button>
                 </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" id="export">Export Data!</button>
+                </div>
             </div>
         </div>
     </div>
@@ -44,6 +47,13 @@
             if( jenis == 'gpa'){ agenGlobal(bulan); }
             if( jenis == 'gpk'){ kcmtGlobal(bulan); }
             if( jenis == 'apk'){ agenPerCam(bulan); }
+        })
+
+        $("#export").click( function(){
+            let jr = $("#jenisrekap").val();
+            let bl = $("#bulanrekap").val();
+            let ur = './export/'+jr+'.php?bl='+bl;
+            window.location.href=ur;
         })
     })
 

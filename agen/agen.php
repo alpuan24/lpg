@@ -18,7 +18,8 @@
 	//	$cit = new db();
 	?>
 	<center><h3></h3></center><hr> <!--sebagai batas jarak saja biar sedikit keliatan rapih-->
-	<a class="btn btn-primary" style="background-color:#228B22" href="./?menu=tbagen&modus=input" >Tambah Agen</a><hr>
+	<a class="btn btn-primary" style="background-color:#228B22" href="./?menu=tbagen&modus=input" >Tambah Agen</a>&nbsp;
+	<a class="btn btn-primary" style="background-color:#228B22" href="./export/agen.php" >Export Data Agen</a><hr>
 </div>
 
 	<center><h3>Daftar Agen LPG Tabung 3 Kg Kabupaten Banjarnegara</h3></center><hr>

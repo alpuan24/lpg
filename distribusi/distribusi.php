@@ -47,26 +47,26 @@
 		<div class="form-group">
 			<select id="kecamatan" class="form-control">
 				<option>Pilih Kecamatan</option>
-				<option>Susukan</option>
-				<option>Purwareja Klampok</option>
-				<option>Mandiraja</option>
-				<option>Purwonegoro</option>
-				<option>Bawang</option>
-				<option>Banjarnegara</option>
-				<option>Sigaluh</option>
-				<option>Madukara</option>
 				<option>Banjarmangu</option>
-				<option>Wanadadi</option>
-				<option>Rakit</option>
-				<option>Punggelan</option>
-				<option>Karangkobar</option>
-				<option>Pagentan</option>
-				<option>Pejawaran</option>
+				<option>Banjarnegara</option>
 				<option>Batur</option>
-				<option>Wanayasa</option>
+				<option>Bawang</option>
 				<option>Kalibening</option>
-				<option>Pandanarum</option>
+				<option>Karangkobar</option>
+				<option>Madukara</option>
+				<option>Mandiraja</option>
 				<option>Pagedongan</option>
+				<option>Pagentan</option>
+				<option>Pandanarum</option>
+				<option>Pejawaran</option>
+				<option>Punggelan</option>
+				<option>Purwareja Klampok</option>
+				<option>Purwonegoro</option>
+				<option>Rakit</option>
+				<option>Sigaluh</option>
+				<option>Susukan</option>
+				<option>Wanadadi</option>
+				<option>Wanayasa</option>
 			</select>
 		</div>
 		</div>
