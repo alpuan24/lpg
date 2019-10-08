@@ -12,13 +12,13 @@ if($_POST['modus'] == 'simpan'){
 	// simpan data anggota
 	// $ci->simpan($tabel,$kolom,$data)
 	$tabel = "tabeluser"; $kolom = "id,nama,email,user,password,no_hp,kelas,niap";
-	
+	$newPassword = md5($_POST['user'].'***'.$_POST['password']);
 	// sesuaikan format data
 	$id = $_POST['id'];
 	$nama  = $_POST['nama'];
 	$email  = $_POST['email'];
 	$user  = $_POST['user'];
-	$password  = $_POST['password'];
+	$password  = $newPassword;
 	$no_hp  = $_POST['no_hp'];
 	$kelas  = $_POST['kelas'];
 	$niap  = $_POST['niap'];
