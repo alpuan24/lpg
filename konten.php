@@ -23,5 +23,6 @@
 			case 'user' : include("user/user.php"); break;
 			case 'tbuser' : include("user/formulirUser.php"); break;
 			case 'formulirUser' : include("user/formulirUser.php"); break;
+			case 'gandi' : include("user/gandi.php"); break;
 		}
 ?>

@@ -53,10 +53,13 @@
 				<td>".$anggota[$i]['niap']."</td>
 				<td>
 					<a class='btn btn-success' href='./?menu=formulirUser&modus=update&id=".$anggota[$i]['id']."'>
-					<span class='glyphicon glyphicon-pencil'></span>Edit</a>
+					<span class='glyphicon glyphicon-pencil'></span></a>
 
 					<a class='btn btn-danger' href='user/hapus.php?id=".$anggota[$i]['id']."'>
-					<span class='glyphicon glyphicon-remove'></span>Hapus </a>
+					<span class='glyphicon glyphicon-remove'></span> </a>
+
+					<a class='btn btn-warning' href='./?menu=gandi&id=".$anggota[$i]['id']."'>
+					<span class='glyphicon glyphicon-lock'></span> </a>
 				</td>
 			</tr>
 			";

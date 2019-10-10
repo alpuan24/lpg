@@ -1,2 +1,10 @@
 view
 CREATE OR REPLACE VIEW vwDisribusi AS SELECT tabeldistribusi.* , tabelagen.namaAgen , tabelpangkalan.pemilikPangkalan , tabelpangkalan.desa iddesa , tabeldesa.desa namadesa, tabelpangkalan.kecamatan FROM tabeldistribusi , tabelagen , tabeldesa , tabelpangkalan WHERE tabelpangkalan.niap = tabelagen.niap  && tabelpangkalan.idPangkalan = tabeldistribusi.idPangkalan && tabeldesa.nid = tabelpangkalan.desa
+
+UPDATE tabeluser SET `password` = md5('admpemda***admpemda3304banjar') WHERE id = 1;
+UPDATE tabeluser SET `password` = md5('admsms***sms3304banjar') WHERE id =  2;
+UPDATE tabeluser SET `password` = md5('admmh***mh3304banjar') WHERE id =  3;
+UPDATE tabeluser SET `password` = md5('admvba***vga3304banjar') WHERE id =  4;
+UPDATE tabeluser SET `password` = md5('admbsj***bsj3304banjar') WHERE id =  5;
+UPDATE tabeluser SET `password` = md5('admsga***sga3304banjar') WHERE id =  6;
+UPDATE tabeluser SET `password` = md5('admram***ram3304banjar') WHERE id =  7;

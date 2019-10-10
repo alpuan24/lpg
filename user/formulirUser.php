@@ -57,7 +57,7 @@ if($_GET['modus'] == "input" ){
 		<input type="email" class="form-control" name="email" 
 		value="<?php echo $mail; ?>" />
 	</div>
-	
+	<?php if($_GET['modus'] == 'input'): ?>
 	<div class="form-group">
 		<label>User</label>
 		<input type="text" class="form-control" name="user" 
@@ -69,6 +69,7 @@ if($_GET['modus'] == "input" ){
 		<input type="password" class="form-control" name="password" 
 		value="<?php echo $password; ?>" />
 	</div>
+	<?php endif; ?>
 
 	<div class="form-group">
 		<label>Nomor HP</label>

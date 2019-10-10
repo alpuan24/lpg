@@ -35,20 +35,18 @@ if($_POST['modus'] == 'simpan'){
 	$nama  = $_POST['nama'];
 	$email  = $_POST['email'];
 	$user  = $_POST['user'];
-	$password  = $_POST['password'];
 	$no_hp  = $_POST['no_hp'];
 	$kelas  = $_POST['kelas'];
 	$niap  = $_POST['niap'];
-	
-	$dataset = "nama = '$nama', email='$email', user='$user', password='$password', no_hp='$no_hp', kelas='$kelas', niap='$niap'";
+	$newPassword = md5($_POST['user'].'***'.$_POST['password']);
+	$dataset = "nama = '$nama', email='$email', user='$user',  no_hp='$no_hp', kelas='$kelas', niap='$niap'";
 	$kondisi = "id= '$id'";
 	
 	//update data anggota
 	// $ci->update($tabel,$dataset,$kondisi);
 	
 	$ci->update('tabeluser',$dataset,$kondisi);
-	
-	
+
 }
 // arahkan kembali ke file formulirAnggota
 

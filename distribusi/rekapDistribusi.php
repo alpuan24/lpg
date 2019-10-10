@@ -31,10 +31,12 @@
         </div>
     </div>
     <div class="row">
-      <table class="table table-striped table-sm">
-        <thead id="thead"></thead>
-        <tbody id="tbody"></tbody>
-      </table>
+       <div class="col-sm-12">
+        <table class="table table-striped table-sm">
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+        </table>
+       </div>
     </div>
 </div>
 
